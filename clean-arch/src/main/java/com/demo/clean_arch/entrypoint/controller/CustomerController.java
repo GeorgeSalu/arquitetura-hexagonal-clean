@@ -1,5 +1,6 @@
 package com.demo.clean_arch.entrypoint.controller;
 
+import com.demo.clean_arch.core.usecase.DeleteCustomerByIdUseCase;
 import com.demo.clean_arch.core.usecase.FindCustomerByIdUseCase;
 import com.demo.clean_arch.core.usecase.InsertCustomerUseCase;
 import com.demo.clean_arch.core.usecase.UpdateCustomerUseCase;
@@ -26,6 +27,9 @@ public class CustomerController {
     private UpdateCustomerUseCase updateCustomerUseCase;
 
     @Autowired
+    private DeleteCustomerByIdUseCase deleteCustomerByIdUseCase;
+
+    @Autowired
     private CustomerMapper customerMapper;
 
     @PostMapping()
@@ -50,5 +54,10 @@ public class CustomerController {
         return ResponseEntity.noContent().build();
     }
 
+    @DeleteMapping()
+    public ResponseEntity<Void> delete(@PathVariable final String id) {
+        deleteCustomerByIdUseCase.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }
