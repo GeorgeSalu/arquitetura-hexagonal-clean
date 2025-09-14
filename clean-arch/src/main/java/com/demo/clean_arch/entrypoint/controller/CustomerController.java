@@ -54,7 +54,7 @@ public class CustomerController {
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable final String id) {
         deleteCustomerByIdUseCase.delete(id);
         return ResponseEntity.noContent().build();
