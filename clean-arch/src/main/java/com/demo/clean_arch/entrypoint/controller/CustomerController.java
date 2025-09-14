@@ -2,6 +2,7 @@ package com.demo.clean_arch.entrypoint.controller;
 
 import com.demo.clean_arch.core.usecase.FindCustomerByIdUseCase;
 import com.demo.clean_arch.core.usecase.InsertCustomerUseCase;
+import com.demo.clean_arch.core.usecase.UpdateCustomerUseCase;
 import com.demo.clean_arch.entrypoint.controller.mapper.CustomerMapper;
 import com.demo.clean_arch.entrypoint.controller.request.CustomerRequest;
 import com.demo.clean_arch.entrypoint.controller.response.CustomerResponse;
@@ -22,6 +23,9 @@ public class CustomerController {
     private FindCustomerByIdUseCase findCustomerByIdUseCase;
 
     @Autowired
+    private UpdateCustomerUseCase updateCustomerUseCase;
+
+    @Autowired
     private CustomerMapper customerMapper;
 
     @PostMapping()
@@ -37,5 +41,14 @@ public class CustomerController {
         var customerResponse = customerMapper.toCustomerResponse(customer);
         return ResponseEntity.ok().body(customerResponse);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable final String id,@Valid @RequestBody CustomerRequest customerRequest) {
+        var customer = customerMapper.toCustomer(customerRequest);
+        customer.setId(id);
+        updateCustomerUseCase.update(customer, customerRequest.getZipCode());
+        return ResponseEntity.noContent().build();
+    }
+
 
 }
