@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeleteCustomerByIdImple implements DeleteCustomerById {
+public class DeleteCustomerByIdImpl implements DeleteCustomerById {
 
     @Autowired
     private CustomerRepository customerRepository;
