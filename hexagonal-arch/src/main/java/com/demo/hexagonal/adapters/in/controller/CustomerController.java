@@ -1,6 +1,6 @@
 package com.demo.hexagonal.adapters.in.controller;
 
-import com.demo.hexagonal.adapters.in.controller.mapper.CutomerMapper;
+import com.demo.hexagonal.adapters.in.controller.mapper.CustomerMapper;
 import com.demo.hexagonal.adapters.in.controller.request.CustomerRequest;
 import com.demo.hexagonal.application.ports.in.InsertCustomerInputPort;
 import jakarta.validation.Valid;
@@ -19,11 +19,11 @@ public class CustomerController {
     private InsertCustomerInputPort insertCustomerInputPort;
 
     @Autowired
-    private CutomerMapper cutomerMapper;
+    private CustomerMapper customerMapper;
 
     @PostMapping
     public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest customerRequest) {
-        var customer = cutomerMapper.tuCustomer(customerRequest);
+        var customer = customerMapper.tuCustomer(customerRequest);
         insertCustomerInputPort.insert(customer, customerRequest.getZipCode());
         return ResponseEntity.ok().build();
     }
