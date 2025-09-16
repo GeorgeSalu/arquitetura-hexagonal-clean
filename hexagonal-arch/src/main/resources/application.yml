@@ -1,6 +1,9 @@
 spring:
   application:
     name: hexagonal-arch
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/hexagonal
 
 arantes:
   client:
