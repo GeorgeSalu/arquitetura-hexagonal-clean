@@ -1,4 +1,4 @@
-package com.demo.hexagonal_arch;
+package com.demo.hexagonal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.demo.hexagonal_arch;
+package com.demo.hexagonal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
