@@ -1,6 +1,6 @@
-package com.demo.hexagonal.adapters.in.controllers.mapper;
+package com.demo.hexagonal.adapters.in.controller.mapper;
 
-import com.demo.hexagonal.adapters.in.controllers.request.CustomerRequest;
+import com.demo.hexagonal.adapters.in.controller.request.CustomerRequest;
 import com.demo.hexagonal.application.core.domain.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

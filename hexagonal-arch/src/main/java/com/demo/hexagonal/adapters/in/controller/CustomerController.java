@@ -1,9 +1,8 @@
-package com.demo.hexagonal.adapters.in.controllers;
+package com.demo.hexagonal.adapters.in.controller;
 
-import com.demo.hexagonal.adapters.in.controllers.mapper.CutomerMapper;
-import com.demo.hexagonal.adapters.in.controllers.request.CustomerRequest;
+import com.demo.hexagonal.adapters.in.controller.mapper.CutomerMapper;
+import com.demo.hexagonal.adapters.in.controller.request.CustomerRequest;
 import com.demo.hexagonal.application.ports.in.InsertCustomerInputPort;
-import feign.Response;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

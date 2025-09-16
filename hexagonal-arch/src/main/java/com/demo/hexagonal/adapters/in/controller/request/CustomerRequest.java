@@ -1,4 +1,4 @@
-package com.demo.hexagonal.adapters.in.controllers.request;
+package com.demo.hexagonal.adapters.in.controller.request;
 
 import jakarta.validation.constraints.NotBlank;
 
