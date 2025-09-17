@@ -2,7 +2,7 @@ package com.demo.hexagonal.application.ports.in;
 
 import com.demo.hexagonal.application.core.domain.Customer;
 
-public interface FinCustomerByIdInputPort {
+public interface FindCustomerByIdInputPort {
 
     Customer find(String id);
 

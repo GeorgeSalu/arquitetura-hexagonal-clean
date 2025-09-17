@@ -3,7 +3,7 @@ package com.demo.hexagonal.adapters.in.controller;
 import com.demo.hexagonal.adapters.in.controller.mapper.CustomerMapper;
 import com.demo.hexagonal.adapters.in.controller.request.CustomerRequest;
 import com.demo.hexagonal.adapters.in.controller.response.CustomerResponse;
-import com.demo.hexagonal.application.ports.in.FinCustomerByIdInputPort;
+import com.demo.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.demo.hexagonal.application.ports.in.InsertCustomerInputPort;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class CustomerController {
     private InsertCustomerInputPort insertCustomerInputPort;
 
     @Autowired
-    private FinCustomerByIdInputPort finCustomerByIdInputPort;
+    private FindCustomerByIdInputPort findCustomerByIdInputPort;
 
     @Autowired
     private CustomerMapper customerMapper;
@@ -32,7 +32,7 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public ResponseEntity<CustomerResponse> findById(@PathVariable final String id) {
-        var customer = finCustomerByIdInputPort.find(id);
+        var customer = findCustomerByIdInputPort.find(id);
         var customerResponse = customerMapper.toCustomerResponse(customer);
         return ResponseEntity.ok().body(customerResponse);
     }
