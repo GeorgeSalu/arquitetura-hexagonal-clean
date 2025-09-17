@@ -1,6 +1,7 @@
 package com.demo.hexagonal.adapters.in.controller.mapper;
 
 import com.demo.hexagonal.adapters.in.controller.request.CustomerRequest;
+import com.demo.hexagonal.adapters.in.controller.response.CustomerResponse;
 import com.demo.hexagonal.application.core.domain.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,5 +13,7 @@ public interface CustomerMapper {
     @Mapping(target = "address", ignore = true)
     @Mapping(target = "isValidCpf", ignore = true)
     Customer tuCustomer(CustomerRequest customerRequest);
+
+    CustomerResponse toCustomerResponse(Customer customer);
 
 }
