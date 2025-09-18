@@ -5,13 +5,13 @@ import com.demo.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.demo.hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;
 import com.demo.hexagonal.application.ports.out.UpdateCustomerOutputPort;
 
-public class UpdateCsutomerUseCase {
+public class UpdateCustomerUseCase {
 
     private final FindCustomerByIdInputPort findCustomerByIdInputPort;
     private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
     private final UpdateCustomerOutputPort updateCustomerOutputPort;
 
-    public UpdateCsutomerUseCase(FindCustomerByIdInputPort findCustomerByIdInputPort, FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort, UpdateCustomerOutputPort updateCustomerOutputPort) {
+    public UpdateCustomerUseCase(FindCustomerByIdInputPort findCustomerByIdInputPort, FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort, UpdateCustomerOutputPort updateCustomerOutputPort) {
         this.findCustomerByIdInputPort = findCustomerByIdInputPort;
         this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
         this.updateCustomerOutputPort = updateCustomerOutputPort;
