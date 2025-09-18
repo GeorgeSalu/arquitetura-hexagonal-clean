@@ -6,7 +6,7 @@ import com.demo.hexagonal.application.core.domain.Customer;
 import com.demo.hexagonal.application.ports.out.UpdateCustomerOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UpdateCsutomerAdpter implements UpdateCustomerOutputPort {
+public class UpdateCustomerAdapter implements UpdateCustomerOutputPort {
 
     @Autowired
     private CustomerRepository customerRepository;
