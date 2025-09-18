@@ -5,7 +5,9 @@ import com.demo.hexagonal.adapters.out.repository.mapper.CustomerEntityMapper;
 import com.demo.hexagonal.application.core.domain.Customer;
 import com.demo.hexagonal.application.ports.out.UpdateCustomerOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UpdateCustomerAdapter implements UpdateCustomerOutputPort {
 
     @Autowired
