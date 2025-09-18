@@ -19,7 +19,7 @@ import static org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZE
 
 @EnableKafka
 @Configuration
-public class KafkaConumerConfig {
+public class KafkaConsumerConfig {
 
     @Bean
     public ConsumerFactory<String, CustomerMessage> consumerFactory() {
