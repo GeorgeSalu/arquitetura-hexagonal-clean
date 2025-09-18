@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface CutomerMessageMapper {
+public interface CustomerMessageMapper {
 
     @Mapping(target = "address", ignore = true)
     Customer toCustomer(CustomerMessage customerMessage);
