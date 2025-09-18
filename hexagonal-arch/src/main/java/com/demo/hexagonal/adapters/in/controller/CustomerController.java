@@ -34,7 +34,7 @@ public class CustomerController {
 
     @PostMapping
     public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest customerRequest) {
-        var customer = customerMapper.tuCustomer(customerRequest);
+        var customer = customerMapper.toCustomer(customerRequest);
         insertCustomerInputPort.insert(customer, customerRequest.getZipCode());
         return ResponseEntity.ok().build();
     }
@@ -48,7 +48,7 @@ public class CustomerController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable("id") final String id,@Valid @RequestBody CustomerRequest customerRequest) {
-        Customer customer = customerMapper.tuCustomer(customerRequest);
+        Customer customer = customerMapper.toCustomer(customerRequest);
         customer.setId(id);
         updateCustomerInputPort.update(customer, customerRequest.getZipCode());
         return ResponseEntity.noContent().build();
