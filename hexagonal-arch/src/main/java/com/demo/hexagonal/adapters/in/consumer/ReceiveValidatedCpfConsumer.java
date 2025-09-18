@@ -1,6 +1,7 @@
-package com.demo.hexagonal.adapters.in.consumer.message;
+package com.demo.hexagonal.adapters.in.consumer;
 
 import com.demo.hexagonal.adapters.in.consumer.mapper.CutomerMessageMapper;
+import com.demo.hexagonal.adapters.in.consumer.message.CustomerMessage;
 import com.demo.hexagonal.application.ports.in.UpdateCustomerInputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
